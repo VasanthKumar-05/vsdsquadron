@@ -16,5 +16,16 @@ To install the leafpad, we should use the command
 ``` sudo apt install leafpad ```
 as above.
 
-**3.Compiling simple C code :**
+**3.Compiling sample C code :**
 
+Step-1: We have to create a file for the sample code using the command,
+```
+   ~$ cd
+   ~$ leafpad sum1ton.c &
+```
+   
+Step-1 : First we need to type the C code in the leafpad as below:
+
+![sample C code](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/cb649f45-782b-4213-b95a-a99bc4873d44)
+
+then we should save the code.
