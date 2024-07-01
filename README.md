@@ -78,4 +78,112 @@ Hence, you will get the final output of this task as
 
 ![calculations of instructions](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/059d35ea-d38b-46cb-a276-20b81dde9fb9)
 
-      
+</details>
+
+
+<details>
+ <summary> <b> Task 2 :</b> To write a C program for my project and compile with RISC-V GCC</summary>
+ <br>
+
+ **Project Title : Change dispense wizard: Engineering a vending machine with advanced change system**
+
+ **What is Vending Machine :**
+
+ An automated machine which is intended to provide the users with a diverse range of products: snacks, beverages, pizzas, cupcakes, newspapers, tickets, etc. A vending machine dispenses a product to the users based on the amount of money inserted and selection of the product. Vending machine is a 24x7 standalone unit which requires a standard power supply connection to function. It consist of simple electro-mechanical systems which helps to automate the entire vending process. In a nutshell, its basic function is to flawlessly issue users with a diverse range of products anytime.
+
+ **What is Channge dispense wizard in vending machine :**
+
+ The "Change Dispense Wizard" is a specialized framework designed to enhance the process of dispensing change in vending machines. This advanced system incorporates mechanical, electronic, and software components to ensure accurate, efficient, and reliable coin dispensing.
+
+ **Benefits :**
+
+ **1.Enhanced Customer Satisfaction :**
+Quick and accurate change dispensing improves the overall user experience.
+
+**2.Operational Efficiency :**
+Reduces the likelihood of errors and machine downtime.
+
+**3.Increased Security :**
+Protects against fraud and tampering.
+
+**4.Scalability :**
+Can be adapted to different types of vending machines and environments.
+
+![vm](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/b0f6f497-276a-4a0a-9df7-5de1bdb13796)
+
+**Program for the Project :**
+
+```
+#include <stdio.h>
+
+// Function to calculate and dispense change
+void dispenseChange(int amount) {
+    int quarters, dimes, nickels, pennies;
+
+    quarters = amount / 25;
+    amount = amount % 25;
+
+    dimes = amount / 10;
+    amount = amount % 10;
+
+    nickels = amount / 5;
+    amount = amount % 5;
+
+    pennies = amount;
+
+    printf("Change dispensed:\n");
+    printf("Quarters: %d\n", quarters);
+    printf("Dimes: %d\n", dimes);
+    printf("Nickels: %d\n", nickels);
+    printf("Pennies: %d\n", pennies);
+}
+
+int main() {
+    int cost, paid, change;
+
+    // Get the cost of the item
+    printf("Enter the cost of the item (in cents): ");
+    scanf("%d", &cost);
+
+    // Get the amount paid by the user
+    printf("Enter the amount paid by the user (in cents): ");
+    scanf("%d", &paid);
+
+    // Calculate the change to be returned
+    change = paid - cost;
+
+    if (change < 0) {
+        printf("Insufficient amount paid.\n");
+    } else if (change == 0) {
+        printf("Exact amount paid. No change needed.\n");
+    } else {
+        // Dispense the change
+        dispenseChange(change);
+    }
+
+    return 0;
+}
+```
+
+**1.Declaring VendingMachine in Terminal :**
+
+![1 Declaring Vending Machine](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/326b5cab-738b-428d-abe3-e7bfc9925b75)
+
+**2.Typing the code in leafpad :**
+
+![2 C program for the Vending Machine](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/d88f6d2c-9a71-4a0c-9b14-7379b9dcf964)
+
+**3.Executing the code and getting th output :**
+
+![3 Input Output of  VendingMachine](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/d65706c0-b1e6-490b-af5f-d4ee232cd4fa)
+
+**4.compiling and run the code in RISC-V GCC :**
+
+![4 Instructions for assembly code of VendingMachine](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/8a890a71-771e-44dd-8d68-49acc8f29740)
+
+**5.Assembly code output of VendingMachine :**
+
+![5 Assembly code output of VendingMachine](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/3b77559c-7c69-45f4-bbb5-f1a9eb6a9ef5)
+
+This is the final output of the project.
+</details>
