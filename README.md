@@ -64,6 +64,10 @@ Use the command,
  ```
      riscv64-unknown-elf-gcc -ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
  ```
+Then open another tab and use the following command:
+```
+    riscv64-unknown-elf-objdump -d sum1ton.o
+```
 After using the command you will get the complex assembly output.
 
 To get the exact assembly output of your code, use the command
@@ -72,7 +76,7 @@ To get the exact assembly output of your code, use the command
     riscv64-unknown-elf-objdump -d sum1ton.o | less
 ```
 
-And finally search the main using ```\main```
+And finally search the main using ```/main```
 
 Hence, you will get the final output of this task as 
 
