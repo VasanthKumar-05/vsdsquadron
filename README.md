@@ -191,3 +191,95 @@ int main() {
 
 This is the final output of the project.
 </details>
+
+
+<details>
+ <summary><b> Task 3: </b> Perform the Spike simulation using -o1 and -ofast commands and upload the result. </summary>
+ <br>
+
+ In this task we have to perform the spike simulation using two different commands :
+ 1. -o1 command
+ 2. -ofast command
+
+ **I.Spike simulation using -o1 command:**
+
+ 1.First run your program using riscv simulator and get the output using the command,
+ ```
+ riscv64-unknown-elf-gcc -o1 -mabi=lp64 -march=rv64i -o vendingmachine.o vendingmachine.c
+ gcc vendingmachine.c
+ ./a.out
+ ```
+
+ 2.Now run the same program using spike simulator using the command,
+ ```
+ riscv64-unknown-elf-gcc -o1 -mabi-lp64 -march=rv64i -o vendingmachine.o vendingmachine.c
+ spike pk vendingmachine.o
+ ```
+
+ 3.check the both outputs. If the both outputs are same then the compilation is successful.
+
+ ![1 Spike simulation using -o1 command](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/4b796a3f-62ab-4cfc-9485-6834a2070c3e)
+
+ 4.Now go for debugging the assembly code using spike debugging command.
+ 
+   To get the assembly code, use the command
+   ```
+   riscv64-unknown-elf-objdump -d vendingmachine.o | less
+   ```
+
+ ![Screenshot (31)](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/36389a45-f5e7-4717-a019-ec18e3a0c926)
+
+ To debug the code, use the spike command
+ ```
+ spike -d pk vendingmachine.o
+ ```
+
+ And then use the starting address of the assembly code ```until pc 0 100b0``` and compare the both address lines to check the result.
+
+ ![Screenshot (32)](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/9c88ebf5-027f-4ff3-b14e-2a6bead12f03)
+
+ ![Screenshot (33)](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/db81e921-7624-4517-8b5b-d3c60b853b9a)
+
+ **II.Spike simulation using -ofast command:**
+
+ This process is same like the above one. But instead of -o1 command, we use the -ofast command.
+ 
+ 1.Use the command to get the output using riscv simulator,
+ ```
+ riscv64-unknown-elf-gcc -ofast -mabi=lp64 -march=rv64i -o vendingmachine.o vendingmachine.c
+ gcc vendingmachine.c
+ ./a.out
+ ```
+
+ 2.To get the spike simulation output, use the command
+ ```
+ riscv64-unknown-elf-gcc -ofast -mabi=lp64 -march=rv64i -o vendingmachine.o vendingmachine.c
+ spike pk vendingmachine.o
+ ```
+
+ 3.Check the both outputs. If both outputs are same then the compilation is successful.
+
+ ![Screenshot (30)](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/c2a3beaa-4b7a-4b70-a38c-62a63d89c542)
+
+ 4.Now we need to debug the assembly code.
+ 
+ To get the assembly code, use the command 
+ ```
+ riscv64-unknown-elf-objdump -d vendingmachine.o | less
+ ```
+
+ ![Screenshot (31)](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/54a8e1d2-11d2-4633-a46a-0e2666bd082b)
+
+ To debug the assembly code, use the spike command
+ ```
+ spike -d pk vendingmachine.o
+ ```
+
+ Use the starting address ```until pc 0 100b0``` and continue debugging and check the results using both address line outputs.
+
+ ![Screenshot (32)](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/c57f17ee-f2bb-46c1-a04f-01cb02643d6a)
+
+ ![Screenshot (33)](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/af0d6e41-e403-4a24-bf3c-3e24b5f3efff)
+
+ So, that's the end of the task 3.
+</details>
