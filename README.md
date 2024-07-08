@@ -282,4 +282,119 @@ This is the final output of the project.
  ![Screenshot (33)](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/af0d6e41-e403-4a24-bf3c-3e24b5f3efff)
 
  So, that's the end of the task 3.
+
+</details>
+
+
+<details>
+ <summary><b> Task 4: </b> To identify various instruction type and exact 32-bit instruction code in the instruction type format for given RISC-V instructions. </summary>
+ <br>
+
+ *Chat gpt is used as an external source for gathering the information.*
+
+ **What is RISC-V ?**
+
+ RISC-V is an open, free, and extensible instruction set architecture (ISA) based on reduced instruction set computing (RISC) principles. It is designed to be simple, modular, and scalable, suitable for a wide range of applications from small embedded systems to high-performance processors. RISC-V is maintained by the RISC-V Foundation, promoting innovation and collaboration without licensing fees. Its open nature allows for customization and widespread adoption in both academic research and commercial development.
+
+The RISC-V architecture defines several instruction formats for 32-bit instructions.
+
+![MUKIE](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/60ffaf38-af65-4af4-9369-3b1a05978e41)
+
+ **Types of Instruction set formats:**
+
+ **1.R-Type (Register-Register Operations):**
+
+ - Used for: Arithmetic and logical operations.
+ - Format:
+   ```
+    31       25 24    20 19    15 14    12 11       7 6       0
+    +--------+--------+--------+--------+--------+--------+
+    | funct7 |  rs2   |  rs1   | funct3 |   rd   | opcode |
+    +--------+--------+--------+--------+--------+--------+
+   ```
+ - funct7: 7-bit function code
+ - rs2: 5-bit source register 2
+ - rs1: 5-bit source register 1
+ - funct3: 3-bit function code
+ - rd: 5-bit destination register
+ - opcode: 7-bit opcode
+
+ **2.I-Type (Immediate Operations):**
+
+ - Used for: Immediate arithmetic, loads, and system calls.
+ - Format:
+ ```
+  31       20 19    15 14    12 11       7 6       0
+  +--------+--------+--------+--------+--------+
+  | imm[11:0] |  rs1   | funct3 |   rd   | opcode |
+  +--------+--------+--------+--------+--------+
+ ```
+ - imm: 12-bit immediate value
+ - rs1: 5-bit source register 1
+ - funct3: 3-bit function code
+ - rd: 5-bit destination register
+ - opcode: 7-bit opcode
+
+ **3.S-Type (Store Instructions):**
+
+ - Used for: Store operations
+ - Format:
+ ```
+ 31       25 24    20 19    15 14    12 11       7 6       0
+ +--------+--------+--------+--------+--------+--------+
+ | imm[11:5] |  rs2   |  rs1   | funct3 | imm[4:0] | opcode |
+ +--------+--------+--------+--------+--------+--------+
+ ```
+ - imm: 12-bit immediate value (split between imm[11:5] and imm[4:0])
+ - rs2: 5-bit source register 2 (value to be stored)
+ - rs1: 5-bit source register 1 (base address)
+ - funct3: 3-bit function code
+ - opcode: 7-bit opcode
+
+ **4.B-Type (Branch Instructions):**
+
+ - Used for: Conditional branches
+ - Format:
+ ```
+ 31       25 24    20 19    15 14    12 11       7 6       0
+ +--------+--------+--------+--------+--------+--------+
+ | imm[12|10:5] |  rs2   |  rs1   | funct3 | imm[4:1|11] | opcode |
+ +--------+--------+--------+--------+--------+--------+
+ ```
+ - imm: 12-bit immediate value (split between imm[12|10:5] and imm[4:1|11])
+ - rs2: 5-bit source register 2
+ - rs1: 5-bit source register 1
+ - funct3: 3-bit function code
+ - opcode: 7-bit opcode
+
+ **5.U-Type (Upper Immediate Instructions):**
+
+ - Used for: Loading upper immediate, for large constants
+ - Format:
+ ```
+  31       12 11       7 6       0
+  +--------+--------+--------+
+  |       imm[31:12]       |   rd   | opcode |
+  +--------+--------+--------+
+ ```
+ - imm: 20-bit immediate value
+ - rd: 5-bit destination register
+ - opcode: 7-bit opcode
+
+ **6.J-Type (Jump Instructions):**
+
+ - Used for: Unconditional jumps
+ - Format:
+ ```
+  31       12 11       7 6       0
+  +--------+--------+--------+
+  | imm[20|10:1|11|19:12] |   rd   | opcode |
+  +--------+--------+--------+
+ ```
+ - imm: 20-bit immediate value (split between imm[20|10:1|11|19:12])
+ - rd: 5-bit destination register (link address)
+ - opcode: 7-bit opcode
+
+ These formats provide a consistent and efficient way to encode the diverse set of instructions in the RISC-V ISA. Each format is tailored to the specific needs 
+ of different types of operations, ensuring both simplicity and flexibility in instruction encoding.
 </details>
