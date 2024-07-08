@@ -427,12 +427,19 @@ The RISC-V architecture defines several instruction formats for 32-bit instructi
  **2.SUB r3, r1, r2**
 
    Type: R
+   
    Opcode: 0110011
+   
    rd: 00011
+   
    funct3: 000
+   
    rs1 : 00001
+   
    rs2 : 00010
+   
    funct7: 0100000
+   
    *32-bit instruction code:*
    ```
     0100000 00010 00001 000 00011 0110011
@@ -441,12 +448,19 @@ The RISC-V architecture defines several instruction formats for 32-bit instructi
  **3.AND r2,r1,r3**
 
    Type: R
+   
    Opcode: 0110011
+   
    rd : 00010
+   
    funct3: 111
+   
    rs1 : 00001
+   
    rs2 : 00011
+   
    funct7: 0000000
+   
    *32-bit instruction code:*
    ```
     0000000 00011 00001 111 00010 0110011
@@ -455,12 +469,19 @@ The RISC-V architecture defines several instruction formats for 32-bit instructi
  **4.OR r8, r2, r5**
 
  Type: R
+ 
  Opcode: 0110011
+ 
 rd : 01000
+
 funct3: 110
+
 rs1 : 00010
+
 rs2 : 00101
+
 funct7: 0000000
+
 *32-bit instruction code:*
 ```
 0000000 00101 00010 110 01000 0110011
@@ -469,12 +490,19 @@ funct7: 0000000
  **5.XOR r8,r1,r4**
 
  Type: R
+ 
  Opcode: 0110011
+ 
 rd : 01000
+
 funct3: 100
+
 rs1 : 00001
+
 rs2 : 00100
+
 funct7: 0000000
+
 *32-bit instruction code:*
 ```
 0000000 00100 00001 100 01000 0110011
@@ -483,12 +511,19 @@ funct7: 0000000
  **6.SLT r10,r2,r4**
 
  Type: R
+
  Opcode: 0110011
+ 
 rd : 01010
+
 funct3: 010
+
 rs1 : 00010
+
 rs2 : 00100
+
 funct7: 0000000
+
 *32-bit instruction code:*
 ```
 0000000 00100 00010 010 01010 0110011
@@ -497,11 +532,17 @@ funct7: 0000000
 **7.ADDI r12,r3,5**
 
 Type: I
+
 Opcode: 0010011
+
 rd : 01100
+
 funct3: 000
+
 rs1 : 00011
+
 imm: 000000000101
+
 *32-bit instruction code:*
 ```
 000000000101 00011 000 01100 0010011
@@ -510,12 +551,19 @@ imm: 000000000101
  **8.SW r3,r1,r4**
 
  Type: S
+ 
  Opcode: 0100011
+ 
 imm[4:0]: 00100
+
 rs1 : 00001
+
 rs2 : 00011
+
 funct3: 010
+
 imm[11:5]: 0000000
+
 *32-bit instruction code:*
 ```
 0000000 00011 00001 010 00100 0100011
@@ -524,12 +572,19 @@ imm[11:5]: 0000000
  **9.SRL r16,r11,r2**
 
  Type: R
+ 
  Opcode: 0110011
+ 
 rd : 10000
+
 funct3: 101
+
 rs1 : 01011
+
 rs2 : 00010
+
 funct7: 0000000
+
 *32-bit instruction code:*
 ```
 0000000 00010 01011 101 10000 0110011
@@ -538,12 +593,19 @@ funct7: 0000000
  **10.BNE r0, r1, 20**
 
   Type: B
+  
   Opcode: 1100011
+  
 imm[12|10:5]: 0000001
+
 rs2: 00001
+
 rs1: 00000
+
 funct3: 001
+
 imm[4:1|11]: 01000
+
 *32-bit instruction code:*
 ```
 0000000 00001 00000 001 00101 0000001
@@ -552,11 +614,17 @@ imm[4:1|11]: 01000
  **11.BEQ r0, r0, 15**
 
   Type: B
+  
   Opcode: 1100011
+  
 funct3: 000
+
 rs1: 00000
+
 rs2: 00000
+
 imm[11:0]: 15
+
 *32-bit instruction code:*
 ```
 0000000 00000 00000 000 01111 0000000
@@ -565,11 +633,17 @@ imm[11:0]: 15
  **12.LW r13,r11,2**
 
  Type: I
+ 
  Opcode: 0000011
+ 
 rd: 01101
+
 funct3: 010
+
 rs1: 01011
+
 Immediate: 00010
+
 *32-bit instruction code:*
 ```
 000000000010 01011 010 01101 0000011
@@ -578,12 +652,19 @@ Immediate: 00010
  **13.SLL r15,r11,r2**
 
  Type: R
+ 
  Opcode: 0110011
+ 
 rd : 01111
+
 funct3: 001
+
 rs1 : 01011
+
 rs2 : 00010
+
 funct7: 0000000
+
 *32-bit instruction code:*
 ```
 0000000 00010 01011 001 01111 0110011
