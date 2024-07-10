@@ -673,3 +673,99 @@ funct7: 0000000
 So, that's the end of this task.
 
 </details>
+
+
+<details>
+ <summary><b> Task 5: </b> Using the  RISC-V Core verilog netlist and testbench for functional simulation experiment and uploading the waveform outputs.</summary>
+ <br>
+
+ **Follow the steps to obtain the waveforms of the instructions:**
+
+ 1. To run the verilog code, first we need a tool called *iverilog* and to install it, use the following commands
+    ```
+    sudo apt-get update
+    sudo apt-get install iverilog
+    ```
+ 2. Also, to get the waveforms we need another tool called gtkwave and to get that, use the command
+    ```
+    sudo apt-get install gtkwave
+    ```
+![Screenshot (36)](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/d9729f52-4e8b-4395-a878-7dbce07801b1)
+
+ 3. Create a directory using the command
+    ```
+    mkdir vasanth
+    ```
+ 4. To create the files, use the following commands
+    ```
+    touch vasanth_rv32i.v
+    touch vasanth_rv32i_tb.v
+    ```
+ 5. Since we do not have the verilog code, we will take the references of verilog code and the waveform from
+    https://github.com/vinayrayapati/rv32i/
+ 6. We will copy the code from ```iiitb_rv32i.v``` and ```iiitb_rv32i_tb.v``` and pastes the code in ```vasanth_rv32i.v``` and ```vasanth_rv32i_tb.v``` in leafpad and saves the file.
+ 7. To run and simulate the code, use the command
+    ```
+    iverilog -o vasanth_rv32i vasanth_rv32i.v vasanth_rv32i_tb.v
+    ```
+    And to get the output, use the command
+    ``` 
+    ./vasanth_rv32i
+    ```
+ 8. To get the waveforms, use the command
+    ```
+    gtkwave iiitb_rv32i.vcd
+    ```
+
+ **Instructions and their waveforms:**
+
+ *ADD r1,r2,r3*
+ 
+ ![346928410-df93c271-0c7a-40eb-b56d-bb51291bc876](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/b856f2eb-ae5a-494c-8a54-41e3eb052c1d)
+
+ *SUB r3,r1,r2*
+
+ ![346928852-941520a3-bfc6-493c-a1a6-2722ca080308](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/173d9200-7bc4-45e6-bdf6-afd476dc5b59)
+
+ *AND r2,r1,r3*
+
+ ![346929050-98331053-fdcf-4b1c-a297-1dc1eeec9fbb](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/5ad81c65-8569-4498-bec4-8b3c4825c094)
+
+ *OR r8,r2,r5*
+
+ ![346929234-2d274efb-34a8-446a-874f-917d873712f0](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/210bdd8e-4a89-48c8-8682-e6935290b9c0)
+
+ *XOR r8,r1,r4*
+
+ ![346929985-f17cb96e-1fa2-4521-8c4c-6f79c29e3cf0](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/8cc7ac99-34c7-4d01-957a-38ca1bd4f24c)
+
+ *SLT r10,r2,r4*
+
+ ![346930138-421a1c05-8ccf-492c-92b7-d6d8685eb822](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/feb1459a-b11f-4290-b917-94988645a708)
+
+ *ADDI r122,r3,r5*
+
+ ![346930348-f731eed6-7c04-4a3d-a1c9-6ffa6dc47dfc](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/4bb365c5-2ff5-4100-9070-a82d575bd5cf)
+
+ *SW r3,r1,r4*
+
+ ![346930541-468b98fc-7cec-4787-9de5-cb4f74eb8300](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/79e2932e-4982-4a41-88f4-6816593a3f9d)
+
+ *SRL r16,r11,r2*
+
+ ![346930739-5d3ff2ea-491e-46d3-b3a3-7c4046339734](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/9f95768e-1480-460a-aa3b-387dce2a787c)
+
+ *BNE r0,r1,20*
+
+ ![346930933-d5572b5f-b740-47c2-8128-b64253a58fb1](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/ae679a3a-3d11-4815-82d1-73ac17dddbc0)
+
+ *BEQ r0,r0,15*
+
+ ![346931076-97870d87-2618-4069-82ef-f079c2f1ed27](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/f53b5196-64f2-46ec-a393-7d9aeb083aaa)
+
+ *SLL r15,r11,r2*
+
+ ![346931199-75f34f93-c023-4ee4-8a4c-a8e8b470c697](https://github.com/VasanthKumar-05/vsdsquadron/assets/173717586/362d5997-7e7f-45d5-8e87-75affd3012bc)
+
+ And that's the end of this task.
+</details>
