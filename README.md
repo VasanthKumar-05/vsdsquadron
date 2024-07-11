@@ -769,3 +769,50 @@ So, that's the end of this task.
 
  And that's the end of this task.
 </details>
+
+
+<details>
+ <summary><b> Task 6: </b> Overview of the Project. </summary>
+ <br>
+
+ **Overview:**
+
+ The project involves using a VSDsquadron mini board with RISC-V GCC to control a vending machine's change dispense system. It utilizes 4 LEDs as status indicators and 2 buttons for user input. The LEDs indicate different operational states, controlled by button presses. The software manages GPIO operations to toggle LEDs based on button states, simulating a vending machine's interaction for educational or prototyping purposes.
+
+ **Components required for VendingMachine:**
+
+ 1. VSDsquadron Mini Board (RISC-V based microcontroller)
+ 2. LEDs (to indicate different statuses) - 4 LEDs
+ 3. Resistors (220Ω for LEDs) - 4 resistors
+ 4. Buttons (for user input) - 2 buttons
+ 5. Breadboard
+ 6. Connecting Wires
+ 7. Power Supply (5V adapter)
+
+ **Circuit connection:**
+
+ **1. LED Connections:**
+
+ Place LED1 on the breadboard.
+ - Connect the anode(long leg) to GPIO5 through a 220Ω resistor.
+ - Connect the cathode(short leg) to the negative power rail.
+   
+ Repeat the same for LED2, LED3, and LED4, connecting their anodes to GPIO6, GPIO7, and GPIO8 respectively.
+
+ **2. Button Connections:**
+
+ Place Button1 on the breadboard.
+ - Connect one side to GPIO9.
+ - Connect the other side to the negative power rail.
+ 
+ Repeat the same for Button2, connecting it to GPIO10.
+
+ **3. Power Supply Connection:**
+
+ Connect the 5V adapter to the breadboard power rails.
+ - Connect VIN from the VSDsquadron mini to the positive power rail.
+ - Connect GND from the VSDsquadron mini to the negative power rail.
+
+ **Pin**
+
+</details>
