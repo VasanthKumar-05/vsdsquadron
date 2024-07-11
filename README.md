@@ -813,6 +813,78 @@ So, that's the end of this task.
  - Connect VIN from the VSDsquadron mini to the positive power rail.
  - Connect GND from the VSDsquadron mini to the negative power rail.
 
- **Pin**
+ **Pinout diagram:**
 
+ | VSDsquadron mini-board | Component |
+ | -----------------------| ----------|
+ | GPIO5 | LED1 (Anode) through 220Ω Resistor |
+ | GPIO6 | LED2 (Anode) through 220Ω Resistor |
+ | GPIO7 | LED3 (Anode) through 220Ω Resistor |
+ | GPIO8 | LED4 (Anode) through 220Ω Resistor |
+ | GPIO9 | Button1 (One side) |
+ | GPIO10 | Button2 (One side) |
+ | GND | LED1, LED2, LED3, LED4 (Cathode) |
+ | GND | Buttons (Other side) |
+ | VIN | Breadboard Power Rail (+) |
+ | GND |  Breadboard Power Rail (-) |
+
+ **Circuit diagram:**
+
+
+ **How to program:**
+
+```
+ #include <stdio.h>
+#include <stdint.h>
+#include "vsd_gpio.h" 
+
+#define LED1_PIN 5
+#define LED2_PIN 6
+#define LED3_PIN 7
+#define LED4_PIN 8
+#define BUTTON1_PIN 9
+#define BUTTON2_PIN 10
+
+void setup() {
+    gpio_set_direction(LED1_PIN, GPIO_OUTPUT);
+    gpio_set_direction(LED2_PIN, GPIO_OUTPUT);
+    gpio_set_direction(LED3_PIN, GPIO_OUTPUT);
+    gpio_set_direction(LED4_PIN, GPIO_OUTPUT);
+    
+    gpio_set_direction(BUTTON1_PIN, GPIO_INPUT);
+    gpio_set_direction(BUTTON2_PIN, GPIO_INPUT);
+}
+
+void loop() {
+    int button1_state = gpio_read(BUTTON1_PIN);
+    
+    int button2_state = gpio_read(BUTTON2_PIN);
+    
+    if (button1_state == GPIO_HIGH) {
+        gpio_write(LED1_PIN, GPIO_HIGH); 
+        gpio_write(LED2_PIN, GPIO_LOW);  
+    } else {
+        gpio_write(LED1_PIN, GPIO_LOW);  
+        gpio_write(LED2_PIN, GPIO_HIGH); 
+    }
+    
+    if (button2_state == GPIO_HIGH) {
+        gpio_write(LED3_PIN, GPIO_HIGH); 
+        gpio_write(LED4_PIN, GPIO_LOW);  
+    } else {
+        gpio_write(LED3_PIN, GPIO_LOW);  
+        gpio_write(LED4_PIN, GPIO_HIGH); 
+    }
+}
+
+int main() {
+    setup();
+    
+    while (1) {
+        loop();
+    }
+    
+    return 0;
+}
+```
 </details>
