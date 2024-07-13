@@ -830,6 +830,7 @@ So, that's the end of this task.
 
  **Circuit diagram:**
 
+![WhatsApp Image 2024-07-12 at 19 54 06_bb2ec4a5](https://github.com/user-attachments/assets/2bb3721f-babe-4938-9165-1489141b3c22)
 
  **How to program:**
 
